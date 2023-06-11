@@ -1,0 +1,12 @@
+{#{% extends 'base.html' %}#}
+
+{% block content %}
+  <h1>Cargo List</h1>
+  <ul>
+    {% for cargo in cargo_list %}
+      <li><a href="{% url 'cargo-detail' cargo.pk %}">{{ cargo.cargo_name }}</a></li>
+    {% empty %}
+      <li>No cargoes available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,64 @@
+<form method="post">
+  {% csrf_token %}
+
+  <div>
+    <label for="id_special_code">Special Code:</label>
+    <input type="text" name="special_code" id="id_special_code">
+  </div>
+
+  <div>
+    <label for="id_registration_number">Registration Number:</label>
+    <input type="text" name="registration_number" id="id_registration_number">
+  </div>
+
+  <div>
+    <label for="id_year">Year:</label>
+    <input type="number" name="year" id="id_year">
+  </div>
+
+  <div>
+    <label for="id_brand">Brand:</label>
+    <input type="text" name="brand" id="id_brand">
+  </div>
+
+  <div>
+    <label for="id_commercial_description">Commercial Description:</label>
+    <input type="text" name="commercial_description" id="id_commercial_description">
+  </div>
+
+  <div>
+    <label for="id_vehicle_identification_number">Vehicle Identification Number:</label>
+    <input type="text" name="vehicle_identification_number" id="id_vehicle_identification_number">
+  </div>
+
+  <div>
+    <label for="id_total_weight">Total Weight:</label>
+    <input type="number" step="0.01" name="total_weight" id="id_total_weight">
+  </div>
+
+  <div>
+    <label for="id_unloaded_weight">Unloaded Weight:</label>
+    <input type="number" step="0.01" name="unloaded_weight" id="id_unloaded_weight">
+  </div>
+
+  <div>
+    <label for="id_engine_volume">Engine Volume:</label>
+    <input type="number" step="0.01" name="engine_volume" id="id_engine_volume">
+  </div>
+
+   <div class="form-group">
+            <label for="id_fuel_type">Fuel Type:</label>
+            <select name="fuel_type" id="id_fuel_type">
+                {% for fuel in fuel_list %}
+                    <option value="{{ fuel.id }}">{{ fuel.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+  <div>
+    <label for="id_color">Color:</label>
+    <input type="text" name="color" id="id_color">
+  </div>
+
+  <input type="submit" value="Зберегти">
+</form>

@@ -1,0 +1,10 @@
+{% block content %}
+  <h1>Car List</h1>
+  <ul>
+    {% for car in car_list %}
+      <li><a href="{% url 'car-detail' cargo.pk %}">{{ car.car_name }}</a></li>
+    {% empty %}
+      <li>No car available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
